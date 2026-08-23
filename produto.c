@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "produto.h"
 
-int addProduto(Produto **estoque, int *quantidade, int *capacidade)
+int adicionarProduto(Produto **estoque, int *quantidade, int *capacidade)
 {
   Produto *temp;
 
@@ -14,7 +14,7 @@ int addProduto(Produto **estoque, int *quantidade, int *capacidade)
     if (*estoque == NULL)
     {
       printf("Erro ao alocar memoria ------------> AddProdutos\n");
-      return 0;
+      return 1;
     }
   }
   else if (*quantidade == *capacidade)
@@ -26,7 +26,7 @@ int addProduto(Produto **estoque, int *quantidade, int *capacidade)
     {
       printf("Erro ao realocar memoria ------------> AddProdutos\n");
       *capacidade -= 2;
-      return 0;
+      return 1;
     }
 
     *estoque = temp;
@@ -46,4 +46,27 @@ int addProduto(Produto **estoque, int *quantidade, int *capacidade)
   (*quantidade)++;
 
   return 1;
+}
+
+Produto *buscarProduto(Produto **estoque, int *quantidade, int id, int num)
+{
+  if (num >= *quantidade)
+  {
+    return NULL;
+  }
+
+  if ((*estoque)[num].id == id)
+  {
+    printf("\n=====PRODUTO ENCONTRADO =====\n");
+    printf("índice: %d\n", num);
+    printf("ID: %d\n", (*estoque)[num].id);
+    printf("Nome: %s\n", (*estoque)[num].nome);
+    printf("Preco: R$ %2.f\n", (*estoque)[num].preco);
+    printf("Quantidade: %d", (*estoque)[num].quantidade);
+    printf("\n==============================\n");
+
+    return &(*estoque)[num];
+  }
+
+  return buscarProduto(estoque, quantidade, id, num + 1);
 }

@@ -10,6 +10,6 @@ typedef struct
   int quantidade;
 } Produto;
 
-int addProduto(Produto **estoque, int *quantidade, int *capacidade);
-
+int adicionarProduto(Produto **estoque, int *quantidade, int *capacidade);
+Produto *buscarProduto(Produto **estoque, int *quantidade, int id, int num);
 #endif
