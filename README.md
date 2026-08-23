@@ -14,7 +14,6 @@ O projeto foi desenvolvido com foco na aplicação integrada de:
 
 * **Felipe Andrade dos Santos Carvalho**
 * **João Fernandes Neto**
-* **Arnizaut Rocha**
 * **[NOME DO 4º INTEGRANTE]**
 
 > O nome do quarto integrante será adicionado posteriormente.
@@ -202,10 +201,6 @@ Projeto desenvolvido para a disciplina de **Estrutura de Dados**, com foco em:
 * Modularização de código
 
 O trabalho também exige que o código seja entregue compilando sem erros ou warnings e sem vazamentos de memória.
-
-## 📅 Prazo
-
-**27/08/2026**
 
 ## 👨‍💻 Desenvolvimento
 
