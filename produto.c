@@ -13,7 +13,7 @@ int addProduto(Produto **estoque, int *quantidade, int *capacidade)
 
     if (*estoque == NULL)
     {
-      printf("Erro ao alocar memoria\n");
+      printf("Erro ao alocar memoria ------------> AddProdutos\n");
       return 0;
     }
   }
@@ -24,7 +24,7 @@ int addProduto(Produto **estoque, int *quantidade, int *capacidade)
 
     if (temp == NULL)
     {
-      printf("Erro ao realocar memoria\n");
+      printf("Erro ao realocar memoria ------------> AddProdutos\n");
       *capacidade -= 2;
       return 0;
     }

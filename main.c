@@ -11,20 +11,19 @@ int main()
   int select = 0;
 
   printf("\n");
-  printf("========================================\n");
-  printf("          MERCADO - PRECO BAIXO         \n");
-  printf("========================================\n");
-  printf("\n");
-  printf("                MENU\n");
-  printf("----------------------------------------\n");
-  printf("  [1] Cadastrar produto\n");
-  printf("  [2] Remover produto por ID\n");
-  printf("  [3] Listar todos os produtos\n");
-  printf("  [4] Buscar produto por ID\n");
-  printf("  [5] Ordenar produtos por preco\n");
-  printf("  [6] Calcular valor total do estoque\n");
-  printf("  [7] Encerrar programa\n");
-  printf("----------------------------------------\n");
+  printf("╔══════════════════════════════════════════════════╗\n");
+  printf("║               MERCADO - PREÇO BAIXO              ║\n");
+  printf("╠══════════════════════════════════════════════════╣\n");
+  printf("║                   PAINEL CENTRAL                 ║\n");
+  printf("╠══════════════════════════════════════════════════╣\n");
+  printf("║  [1] 📦  Cadastrar novo produto                  ║\n");
+  printf("║  [2] ❌  Remover produto por ID                  ║\n");
+  printf("║  [3] 📋  Listar todos os produtos                ║\n");
+  printf("║  [4] 🔍  Buscar produto por ID                   ║\n");
+  printf("║  [5] 📊  Ordenar produtos por preço              ║\n");
+  printf("║  [6] 💰  Calcular valor total do estoque         ║\n");
+  printf("║  [7] 🚪  Encerrar programa                       ║\n");
+  printf("╚══════════════════════════════════════════════════╝\n");
   printf("\n");
 
   do
