@@ -166,7 +166,21 @@ case 3:
       break;
 
     case 6:
-      break;
+{
+    float total;
+
+    printf("\n========================================\n");
+    printf("       VALOR TOTAL DO ESTOQUE\n");
+    printf("========================================\n");
+
+    total = calcularValorEstoque(estoque, quantidade, 0);
+
+    printf("\nValor total do estoque: R$ %.2f\n", total);
+
+    printf("\n========================================\n");
+
+    break;
+}
 
     case 7:
       printf("Encerrando programa...\n");

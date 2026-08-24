@@ -73,6 +73,17 @@ void listarProdutos(const Produto *estoque, int quantidade, int indice)
   listarProdutos(estoque, quantidade, indice + 1);
 }
 
+float calcularValorEstoque(const Produto *estoque, int quantidade, int indice)
+{
+  if (indice >= quantidade)
+  {
+    return 0.0f;
+  }
+
+  return estoque[indice].preco * estoque[indice].quantidade +
+         calcularValorEstoque(estoque, quantidade, indice + 1);
+}
+
 Produto *buscarProduto(Produto **estoque, int *quantidade, int id, int num)
 {
   Produto *produto = &(*estoque)[num];
