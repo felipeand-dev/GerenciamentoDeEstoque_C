@@ -102,12 +102,12 @@ void ordenarProdutosPorPreco(Produto *estoque, int quantidade)
 
 Produto *buscarProduto(Produto **estoque, int *quantidade, int id, int num)
 {
-  Produto *produto = &(*estoque)[num];
-
   if (num >= *quantidade)
   {
     return NULL;
   }
+
+  Produto *produto = &(*estoque)[num];
 
   if (produto->id == id)
   {
