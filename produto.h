@@ -12,4 +12,5 @@ typedef struct
 
 int adicionarProduto(Produto **estoque, int *quantidade, int *capacidade);
 Produto *buscarProduto(Produto **estoque, int *quantidade, int id, int num);
+int removerProduto(Produto **estoque, int *quantidade, int id);
 #endif

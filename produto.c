@@ -13,7 +13,7 @@ int adicionarProduto(Produto **estoque, int *quantidade, int *capacidade)
 
     if (*estoque == NULL)
     {
-      printf("Erro ao alocar memoria ------------> AddProdutos\n");
+      printf("Erro ao alocar memoria ------------> adicionarProduto\n");
       return 1;
     }
   }
@@ -24,7 +24,7 @@ int adicionarProduto(Produto **estoque, int *quantidade, int *capacidade)
 
     if (temp == NULL)
     {
-      printf("Erro ao realocar memoria ------------> AddProdutos\n");
+      printf("Erro ao realocar memoria ------------> adicionarProduto\n");
       *capacidade -= 2;
       return 1;
     }
@@ -32,41 +32,75 @@ int adicionarProduto(Produto **estoque, int *quantidade, int *capacidade)
     *estoque = temp;
   }
 
-  (*estoque)[*quantidade].id = *quantidade + 1;
+  Produto *produto = &(*estoque)[*quantidade];
+
+  if (*quantidade == 0)
+  {
+    produto->id = 1;
+  }
+  else
+  {
+    produto->id = (*estoque)[*quantidade - 1].id + 1;
+  }
 
   printf("\n===== CADASTRO DE PRODUTO =====\n");
-  printf("ID: %d\n", (*estoque)[*quantidade].id);
+  printf("ID: %d\n", produto->id);
   printf("Nome: ");
-  scanf(" %59[^\n]", (*estoque)[*quantidade].nome);
+  scanf(" %59[^\n]", produto->nome);
   printf("Preco: R$");
-  scanf("%f", &(*estoque)[*quantidade].preco);
+  scanf("%f", &produto->preco);
   printf("Quantidade: ");
-  scanf("%d", &(*estoque)[*quantidade].quantidade);
+  scanf("%d", &produto->quantidade);
 
   (*quantidade)++;
 
-  return 1;
+  return 0;
 }
 
 Produto *buscarProduto(Produto **estoque, int *quantidade, int id, int num)
 {
+  Produto *produto = &(*estoque)[*quantidade];
+
   if (num >= *quantidade)
   {
     return NULL;
   }
 
-  if ((*estoque)[num].id == id)
+  if (produto->id == id)
   {
     printf("\n=====PRODUTO ENCONTRADO =====\n");
     printf("índice: %d\n", num);
-    printf("ID: %d\n", (*estoque)[num].id);
-    printf("Nome: %s\n", (*estoque)[num].nome);
-    printf("Preco: R$ %2.f\n", (*estoque)[num].preco);
-    printf("Quantidade: %d", (*estoque)[num].quantidade);
+    printf("ID: %d\n", produto->id);
+    printf("Nome: %s\n", produto->nome);
+    printf("Preco: R$ %.2f\n", produto->preco);
+    printf("Quantidade: %d", produto->quantidade);
     printf("\n==============================\n");
 
     return &(*estoque)[num];
   }
 
   return buscarProduto(estoque, quantidade, id, num + 1);
+}
+
+int removerProduto(Produto **estoque, int *quantidade, int id)
+{
+  int posicao = 0;
+  Produto *produto = buscarProduto(estoque, quantidade, id, 0);
+
+  if (produto == NULL)
+  {
+    printf("\nProduto não encontrado.\n");
+    return 1;
+  }
+
+  posicao = produto - *estoque;
+
+  for (int i = posicao; i < *quantidade - 1; i++)
+  {
+    (*estoque)[i] = (*estoque)[i + 1];
+  }
+
+  (*quantidade)--;
+
+  return 0;
 }

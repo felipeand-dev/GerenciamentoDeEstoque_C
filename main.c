@@ -10,6 +10,8 @@ int main()
   int quantidade = 0;
   int select = 0;
 
+  system("clear");
+
   do
   {
     printf("\n");
@@ -34,10 +36,13 @@ int main()
     switch (select)
     {
     case 1:
+    {
       int num = 0;
+
+      system("clear");
       do
       {
-        if (!adicionarProduto(&estoque, &quantidade, &capacidade))
+        if (adicionarProduto(&estoque, &quantidade, &capacidade))
         {
           printf("Falha na alocacao. Encerrando cadastro\n");
           break;
@@ -48,19 +53,65 @@ int main()
         printf("0 - Nao\n");
         printf("Opcao: ");
         scanf("%d", &num);
+
+        if (num == 0)
+        {
+          system("clear");
+        }
+
       } while (num == 1);
       break;
+    }
 
     case 2:
+    {
+      int id = 0;
+      int num2 = 0;
 
+      system("clear");
+
+      do
+      {
+        printf("\n");
+        printf("========================================\n");
+        printf("          REMOVER PRODUTO\n");
+        printf("========================================\n");
+
+        printf("\nDigite o ID do produto que deseja remover: ");
+        scanf("%d", &id);
+
+        if (removerProduto(&estoque, &quantidade, id))
+        {
+          printf("\nFalha ao remover produto.\n");
+        }
+        else
+        {
+          printf("\nProduto removido com sucesso!\n");
+        }
+
+        printf("\nDeseja remover mais produtos?\n");
+        printf("1 - Sim\n");
+        printf("0 - Nao\n");
+        printf("Opcao: ");
+        scanf("%d", &num2);
+
+        if (num2 == 0)
+        {
+          system("clear");
+        }
+
+      } while (num2 == 1);
       break;
-
+    }
     case 3:
       break;
 
     case 4:
+    {
       int id = 0;
-      int num2 = 0;
+      int num4 = 0;
+
+      system("clear");
 
       do
       {
@@ -76,17 +127,24 @@ int main()
 
         if (produto == NULL)
         {
-          printf("\nProduto não encontrado.\n");
+          printf("\nProduto nao encontrado.\n");
         }
 
         printf("\nDeseja buscar mais produtos?\n");
         printf("1 - Sim\n");
         printf("0 - Nao\n");
         printf("Opcao: ");
-        scanf("%d", &num2);
-      } while (num2 == 1);
-      break;
+        scanf("%d", &num4);
 
+        if (num4 == 0)
+        {
+          system("clear");
+        }
+
+      } while (num4 == 1);
+
+      break;
+    }
     case 5:
       break;
 

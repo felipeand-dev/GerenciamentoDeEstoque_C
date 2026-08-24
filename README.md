@@ -14,9 +14,7 @@ O projeto foi desenvolvido com foco na aplicação integrada de:
 
 * **Felipe Andrade dos Santos Carvalho**
 * **João Fernandes Neto**
-* **[NOME DO 4º INTEGRANTE]**
-
-> O nome do quarto integrante será adicionado posteriormente.
+* **João Luiz Matos Ferreira**
 
 ## 🎯 Objetivo
 
