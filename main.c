@@ -163,7 +163,24 @@ case 3:
       break;
     }
     case 5:
+    {
+      printf("\n========================================\n");
+      printf("      PRODUTOS ORDENADOS POR PRECO\n");
+      printf("========================================\n");
+
+      if (quantidade == 0)
+      {
+        printf("\nNenhum produto cadastrado.\n");
+      }
+      else
+      {
+        ordenarProdutosPorPreco(estoque, quantidade);
+        listarProdutos(estoque, quantidade, 0);
+      }
+
+      printf("\n========================================\n");
       break;
+    }
 
     case 6:
 {

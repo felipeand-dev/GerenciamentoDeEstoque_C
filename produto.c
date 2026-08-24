@@ -84,6 +84,22 @@ float calcularValorEstoque(const Produto *estoque, int quantidade, int indice)
          calcularValorEstoque(estoque, quantidade, indice + 1);
 }
 
+void ordenarProdutosPorPreco(Produto *estoque, int quantidade)
+{
+  for (int i = 0; i < quantidade - 1; i++)
+  {
+    for (int j = 0; j < quantidade - i - 1; j++)
+    {
+      if (estoque[j].preco > estoque[j + 1].preco)
+      {
+        Produto temp = estoque[j];
+        estoque[j] = estoque[j + 1];
+        estoque[j + 1] = temp;
+      }
+    }
+  }
+}
+
 Produto *buscarProduto(Produto **estoque, int *quantidade, int id, int num)
 {
   Produto *produto = &(*estoque)[num];

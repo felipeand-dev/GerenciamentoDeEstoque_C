@@ -13,6 +13,7 @@ typedef struct
 int adicionarProduto(Produto **estoque, int *quantidade, int *capacidade);
 void listarProdutos(const Produto *estoque, int quantidade, int indice);
 float calcularValorEstoque(const Produto *estoque, int quantidade, int indice);
+void ordenarProdutosPorPreco(Produto *estoque, int quantidade);
 Produto *buscarProduto(Produto **estoque, int *quantidade, int id, int num);
 int removerProduto(Produto **estoque, int *quantidade, int id);
 #endif
