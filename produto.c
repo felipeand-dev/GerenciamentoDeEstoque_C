@@ -57,6 +57,22 @@ int adicionarProduto(Produto **estoque, int *quantidade, int *capacidade)
   return 0;
 }
 
+void listarProdutos(const Produto *estoque, int quantidade, int indice)
+{
+  if (indice >= quantidade)
+  {
+    return;
+  }
+
+  printf("\nProduto %d\n", indice + 1);
+  printf("ID: %d\n", estoque[indice].id);
+  printf("Nome: %s\n", estoque[indice].nome);
+  printf("Preco: R$ %.2f\n", estoque[indice].preco);
+  printf("Quantidade: %d\n", estoque[indice].quantidade);
+
+  listarProdutos(estoque, quantidade, indice + 1);
+}
+
 Produto *buscarProduto(Produto **estoque, int *quantidade, int id, int num)
 {
   Produto *produto = &(*estoque)[num];

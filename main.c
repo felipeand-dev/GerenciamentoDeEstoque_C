@@ -103,8 +103,25 @@ int main()
       } while (num2 == 1);
       break;
     }
-    case 3:
-      break;
+case 3:
+{
+    printf("\n========================================\n");
+    printf("          LISTA DE PRODUTOS\n");
+    printf("========================================\n");
+
+    if (quantidade == 0)
+    {
+        printf("\nNenhum produto cadastrado.\n");
+    }
+    else
+    {
+        listarProdutos(estoque, quantidade, 0);
+    }
+
+    printf("\n========================================\n");
+
+    break;
+}
 
     case 4:
     {
