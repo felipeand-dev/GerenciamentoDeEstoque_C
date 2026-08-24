@@ -59,7 +59,7 @@ int adicionarProduto(Produto **estoque, int *quantidade, int *capacidade)
 
 Produto *buscarProduto(Produto **estoque, int *quantidade, int id, int num)
 {
-  Produto *produto = &(*estoque)[*quantidade];
+  Produto *produto = &(*estoque)[num];
 
   if (num >= *quantidade)
   {
@@ -85,6 +85,7 @@ Produto *buscarProduto(Produto **estoque, int *quantidade, int id, int num)
 int removerProduto(Produto **estoque, int *quantidade, int id)
 {
   int posicao = 0;
+
   Produto *produto = buscarProduto(estoque, quantidade, id, 0);
 
   if (produto == NULL)
